@@ -8,6 +8,7 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { notFound } from 'next/navigation';
 
 export async function fetchRevenue() {
   try {
@@ -141,6 +142,7 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
+
   try {
     const data = await sql<InvoiceForm>`
       SELECT
